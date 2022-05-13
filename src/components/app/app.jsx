@@ -1,5 +1,6 @@
 import { LoginPage } from "../login-page/login-page";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ListPage } from "../list/list";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./app.css";
 
@@ -16,9 +17,14 @@ function App() {
       </header>
       <main className="main">
         <Router>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <ListPage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+          </Switch>
         </Router>
       </main>
     </div>
